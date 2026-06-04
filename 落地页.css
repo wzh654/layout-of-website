@@ -168,6 +168,101 @@ body {
     margin-top: 28px;
     flex-wrap: wrap;
 }
+/* 数据优势模块 */
+.advantage-stats {
+    background: #fff;
+    padding: 30px 0 40px;
+}
+
+.advantage-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 22px;
+}
+
+.advantage-card {
+    background: linear-gradient(180deg, #ffffff 0%, #f7faf8 100%);
+    border: 1px solid #dfe9e2;
+    border-radius: 18px;
+    padding: 20px;
+    box-shadow: 0 10px 28px rgba(0,0,0,0.04);
+    transition: all 0.3s ease;
+}
+
+.advantage-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 18px 38px rgba(0,0,0,0.08);
+}
+
+.advantage-index {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    min-width: 72px;
+    height: 28px;
+
+    padding: 0 14px;
+
+    border-radius: 999px;
+
+    background: #dcefe4;
+    color: #5d7268;
+
+    font-size: 14px;
+    font-weight: 700;
+
+    margin-bottom: 14px;
+}
+
+.advantage-card h3 {
+    font-size: 34px;
+    line-height: 1.1;
+    color: #009846;
+    font-weight: 800;
+    margin-bottom: 10px;
+}
+
+.advantage-card p {
+    font-size: 14px;
+    line-height: 1.6;
+    color: #556370;
+    font-weight: 600;
+}
+
+/* 移动端 */
+@media (max-width: 768px) {
+
+    .advantage-stats {
+        padding: 20px 0 30px;
+    }
+
+    .advantage-grid {
+        grid-template-columns: 1fr 1fr;
+        gap: 14px;
+    }
+
+    .advantage-card {
+        padding: 16px;
+        border-radius: 14px;
+    }
+
+    .advantage-index {
+        min-width: 58px;
+        height: 24px;
+        font-size: 12px;
+        margin-bottom: 10px;
+    }
+
+    .advantage-card h3 {
+        font-size: 24px;
+    }
+
+    .advantage-card p {
+        font-size: 12px;
+        line-height: 1.5;
+    }
+}
 /*应用案例*/
 .app-slider {
     position: relative;
@@ -376,7 +471,7 @@ h2 {
     position: absolute;
     background: #F5B301;
 }
-/* 成本：硬币线 */
+/* Operating savings */
 .icon-cost::before {
     width: 34px;
     height: 34px;
@@ -388,155 +483,57 @@ h2 {
 }
 
 .icon-cost::after {
-    width: 20px;
-    height: 2px;
-    left: 31px;
-    top: 40px;
-}
-
-/* 维护 */
-.icon-maintenance::before {
-    width: 34px;
-    height: 2px;
+    width: 16px;
+    height: 16px;
+    border-left: 2px solid #F5B301;
+    border-bottom: 2px solid #F5B301;
     transform: rotate(-45deg);
-    left: 24px;
-    top: 40px;
-}
-
-.icon-maintenance::after {
-    width: 14px;
-    height: 14px;
-    border: 2px solid #F5B301;
-    border-radius: 50%;
+    left: 33px;
+    top: 30px;
     background: transparent;
-    left: 44px;
-    top: 22px;
 }
 
-/* 冷链 */
-.icon-coldchain::before {
+/* Uptime and reliability */
+.icon-maintenance::before {
     width: 38px;
-    height: 24px;
-    border: 2px solid #F5B301;
-    background: transparent;
-    left: 20px;
-    top: 27px;
-}
-
-.icon-coldchain::after {
-    width: 34px;
-    height: 2px;
-    left: 24px;
-    top: 56px;
-}
-
-/* 功率 */
-.icon-power::before {
-    width: 2px;
-    height: 42px;
-    transform: rotate(25deg);
-    left: 40px;
-    top: 20px;
-}
-
-.icon-power::after {
-    width: 24px;
-    height: 2px;
-    transform: rotate(-25deg);
-    left: 30px;
-    top: 41px;
-}
-
-/* 电池 */
-.icon-battery::before {
-    width: 40px;
     height: 22px;
     border: 2px solid #F5B301;
     border-radius: 4px;
     background: transparent;
     left: 18px;
-    top: 29px;
-}
-
-.icon-battery::after {
-    width: 5px;
-    height: 12px;
-    left: 60px;
-    top: 35px;
-}
-
-/* 扩展 */
-.icon-scale::before {
-    width: 6px;
-    height: 28px;
-    left: 25px;
-    top: 32px;
-    box-shadow:
-        14px -10px 0 #F5B301,
-        28px -18px 0 #F5B301;
-}
-
-.icon-scale::after {
-    width: 40px;
-    height: 2px;
-    left: 21px;
-    top: 60px;
-}
-
-/* 插头 */
-.icon-plug::before {
-    width: 30px;
-    height: 24px;
-    border: 2px solid #F5B301;
-    border-radius: 0 0 10px 10px;
-    background: transparent;
-    left: 24px;
     top: 30px;
 }
 
-.icon-plug::after {
-    width: 2px;
-    height: 18px;
-    left: 40px;
-    top: 54px;
-}
-
-/* 耐用 */
-.icon-durable::before {
-    width: 34px;
-    height: 40px;
-    border: 2px solid #F5B301;
-    border-radius: 18px 18px 8px 8px;
+.icon-maintenance::after {
+    width: 10px;
+    height: 10px;
+    border-right: 2px solid #F5B301;
+    border-bottom: 2px solid #F5B301;
+    transform: rotate(45deg);
+    left: 34px;
+    top: 34px;
     background: transparent;
-    left: 23px;
-    top: 20px;
 }
 
-.icon-durable::after {
-    width: 2px;
-    height: 26px;
-    left: 40px;
+/* Fleet Readiness Design */
+.icon-battery::before {
+    width: 42px;
+    height: 24px;
+    border: 2px solid #F5B301;
+    border-radius: 14px;
+    background: transparent;
+    left: 18px;
     top: 28px;
 }
 
-/* 轻量 */
-.icon-lightweight::before {
-    width: 38px;
-    height: 18px;
-    border: 2px solid #F5B301;
-    border-radius: 50%;
-    background: transparent;
-    transform: rotate(-28deg);
-    left: 22px;
-    top: 30px;
-}
-
-.icon-lightweight::after {
-    width: 30px;
+.icon-battery::after {
+    width: 20px;
     height: 2px;
-    transform: rotate(-28deg);
-    left: 26px;
-    top: 44px;
+    left: 29px;
+    top: 40px;
+    box-shadow:
+        0 -8px 0 #F5B301,
+        0 8px 0 #F5B301;
 }
 
 .benefit-item h4 {
@@ -697,7 +694,18 @@ h2 {
     color: #666;
 }
 
+.advantage-heading {
+    text-align: center;
+    margin-bottom: 46px;
+}
 
+.advantage-heading h2 {
+    font-size: 52px;
+    font-weight: 800;
+    letter-spacing: -1px;
+    margin-bottom: 0;
+    color: #111;
+}
 
 
 
@@ -986,7 +994,74 @@ h2 {
 	.series-text h3 {
 	    font-size: 28px;
 	}
+	/* 数据优势模块 */
+	.advantage-stats {
+	    background: #fff;
+	    padding: 28px 0 34px;
+	    border-bottom: 1px solid #e5eee8;
+	}
 	
+	.advantage-grid {
+	    display: grid;
+	    grid-template-columns: repeat(4, 1fr);
+	    gap: 22px;
+	}
+	
+	.advantage-card {
+	    background: linear-gradient(180deg, #ffffff 0%, #f8fbf9 100%);
+	    border: 1px solid #dfe9e2;
+	    border-radius: 18px;
+	    padding: 18px 20px 20px;
+	    box-shadow: 0 12px 30px rgba(0,0,0,0.04);
+	}
+	
+	.advantage-index {
+	    height: 26px;
+	    line-height: 26px;
+	    background: #dcefe4;
+	    color: #58756a;
+	    border-radius: 999px;
+	    padding: 0 14px;
+	    font-size: 14px;
+	    font-weight: 700;
+	    margin-bottom: 10px;
+	}
+	
+	.advantage-card h3 {
+	    font-size: 28px;
+	    line-height: 1.1;
+	    color: #009846;
+	    margin-bottom: 8px;
+	    font-weight: 800;
+	}
+	
+	.advantage-card p {
+	    font-size: 14px;
+	    color: #4d6370;
+	    font-weight: 600;
+	    line-height: 1.5;
+	}
+	
+	/* 移动端 */
+	@media (max-width: 768px) {
+	    .advantage-grid {
+	        grid-template-columns: 1fr 1fr;
+	        gap: 14px;
+	    }
+	
+	    .advantage-card {
+	        padding: 14px;
+	        border-radius: 14px;
+	    }
+	
+	    .advantage-card h3 {
+	        font-size: 22px;
+	    }
+	
+	    .advantage-card p {
+	        font-size: 12px;
+	    }
+	}
 	/* Series 图片移动端横滑 */
 	.series-grid {
 	    display: flex;
@@ -1078,4 +1153,12 @@ h2 {
 	 .container {
 	        padding: 0 20px;
 	    }
+		.advantage-heading {
+		        margin-bottom: 28px;
+		    }
+		
+		    .advantage-heading h2 {
+		        font-size: 34px;
+		        line-height: 1.2;
+		    }
 }
