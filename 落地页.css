@@ -1,0 +1,1081 @@
+/* 全局样式重置 */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    line-height: 1.6;
+    color: #333;
+}
+
+.container {
+    max-width: 1440px;
+    margin: 0 auto;
+    padding: 0 48px;
+}
+
+/* 导航栏 */
+.navbar {
+    background: #fff;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    padding: 15px 0;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.navbar .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo img {
+    height: 40px;
+}
+
+.nav-menu {
+    display: flex;
+    gap: 52px;
+    align-items: center;
+}
+
+.nav-menu a {
+    text-decoration: none;
+    color: #333;
+    font-weight: 500;
+    transition: color 0.3s;
+    white-space: nowrap;
+}
+
+.nav-menu a:hover {
+    color: #2E7D32;
+}
+.mobile-top-inquiry {
+    display: none;
+}
+
+.btn-contact {
+    background: #2E7D32;
+    color: #fff !important;
+    padding: 10px 22px;
+    border-radius: 5px;
+    margin-left: 10px;
+}
+/* 移动端固定询盘按钮：默认隐藏 */
+.mobile-contact-btn {
+    display: none;
+}
+/*整体风格*/
+
+/* 英雄区 */
+.hero {
+    position: relative;
+    overflow: hidden;
+    color: #fff;
+    padding: 90px 0;
+    min-height: 560px;
+    background: url('首屏图片/高质量产品图.png') center/cover no-repeat;
+}
+
+/* 虚化背景层：卡车图片 + 高斯模糊 */
+.hero::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+        90deg,
+        rgba(0, 0, 0, 0.78) 0%,
+        rgba(0, 0, 0, 0.58) 45%,
+        rgba(0, 0, 0, 0.25) 100%
+    );
+    z-index: 1;
+}
+
+/* 深色遮罩层，保证文字对比度 */
+.hero::after {
+    display: none;
+}
+
+/* 确保所有内容显示在背景之上 */
+.hero > * {
+    position: relative;
+    z-index: 2;
+}
+
+.hero-content {
+    display: grid;
+    grid-template-columns: 0.95fr 1.05fr;
+    gap: 50px;
+    align-items: center;
+}
+
+.hero-subtitle {
+    color: #81C784;
+    font-size: 14px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 10px;
+}
+
+.hero h1 {
+    font-size: 36px;
+    margin-bottom: 20px;
+    line-height: 1.3;
+}
+
+.hero h1 span {
+    color: #FFC107;
+}
+
+.hero-desc {
+    font-size: 16px;
+    margin-bottom: 30px;
+    max-width: 500px;
+}
+
+.hero-buttons {
+    display: flex;
+    gap: 15px;
+    margin-bottom: 30px;
+}
+
+.btn-primary {
+    background: #2E7D32;
+    color: #fff;
+    padding: 12px 24px;
+    border-radius: 4px;
+    text-decoration: none;
+    font-weight: 500;
+}
+
+.btn-secondary {
+    background: transparent;
+    color: #fff;
+    border: 2px solid #fff;
+    padding: 12px 24px;
+    border-radius: 4px;
+    text-decoration: none;
+    font-weight: 500;
+}
+
+.hero-features {
+    display: flex;
+    gap: 14px;
+    margin-top: 28px;
+    flex-wrap: wrap;
+}
+/*应用案例*/
+.app-slider {
+    position: relative;
+    width: 100%;
+    height: 320px;
+    overflow: hidden;
+    border-radius: 12px 12px 0 0;
+    background: #f5f5f5;
+}
+
+.app-slider-track {
+    display: flex;
+    width: 100%;
+    height: 100%;
+    transition: transform 0.35s ease;
+}
+
+.app-slider-track .app-img {
+    flex: 0 0 100%;
+    width: 100%;
+    height: 320px;
+    object-fit: cover;
+    object-position: center;
+}
+
+.app-slide-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 34px;
+    height: 34px;
+    border: none;
+    border-radius: 50%;
+    background: rgba(255,255,255,0.88);
+    color: #111;
+    font-size: 24px;
+    line-height: 34px;
+    cursor: pointer;
+    z-index: 3;
+}
+
+.app-prev {
+    left: 12px;
+}
+
+.app-next {
+    right: 12px;
+}
+
+.app-slide-dots {
+    position: absolute;
+    left: 50%;
+    bottom: 14px;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 6px;
+    z-index: 3;
+}
+
+.app-slide-dots span {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: rgba(255,255,255,0.55);
+}
+
+.app-slide-dots span.active {
+    width: 20px;
+    border-radius: 999px;
+    background: #fff;
+}
+
+.single-image .app-slide-btn,
+.single-image .app-slide-dots {
+    display: none;
+}
+.feature-card {
+    flex: 1;
+    min-width: 180px;
+    background: rgba(255, 255, 255, 0.14);
+    border: 1px solid rgba(255, 255, 255, 0.22);
+    padding: 16px 18px;
+    border-radius: 999px;
+    backdrop-filter: blur(6px);
+    text-align: center;
+}
+
+.feature-card h4 {
+    font-size: 15px;
+    margin-bottom: 0;
+    color: #fff;
+    font-weight: 600;
+}
+
+.feature-card p {
+    display: none;
+}
+
+.hero-image {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.hero-text {
+    order: 2;
+}
+
+.hero-image {
+    order: 1;
+}
+
+.hero-img {
+    max-width: 100%;
+    border-radius: 14px;
+    box-shadow: 0 18px 45px rgba(0,0,0,0.35);
+}
+
+.hero-img {
+    max-width: 100%;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+}
+
+/* 通用区块样式 */
+section {
+    padding: 60px 0;
+}
+
+.section-subtitle {
+    color: #2E7D32;
+    font-size: 14px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 10px;
+}
+
+h2 {
+    font-size: 32px;
+    margin-bottom: 30px;
+    color: #212121;
+}
+
+.section-desc {
+    font-size: 16px;
+    color: #666;
+    margin-bottom: 40px;
+    max-width: 800px;
+}
+
+
+/*带来的好处*/
+.benefits {
+    background: #f2f2f2;
+    padding: 80px 0;
+}
+
+.benefits h2 {
+    margin-bottom: 55px;
+}
+
+.benefit-group {
+    margin-bottom: 56px;
+}
+
+.benefit-group h3 {
+    font-size: 30px;
+    font-weight: 600;
+    color: #111;
+    margin-bottom: 30px;
+    text-align: center;
+}
+
+.benefit-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 34px;
+}
+
+.benefit-item {
+    background: #fff;
+    border-radius: 26px;
+    padding: 42px 30px;
+    text-align: center;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+    transition: all 0.35s ease;
+}
+
+.benefit-item:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 18px 42px rgba(0,0,0,0.08);
+}
+
+.benefit-icon {
+    width: 82px;
+    height: 82px;
+    margin: 0 auto 26px;
+    border: 2px solid #F5B301;
+    border-radius: 50%;
+    position: relative;
+}
+
+/* 默认线条 */
+.benefit-icon::before,
+.benefit-icon::after {
+    content: '';
+    position: absolute;
+    background: #F5B301;
+}
+/* 成本：硬币线 */
+.icon-cost::before {
+    width: 34px;
+    height: 34px;
+    border: 2px solid #F5B301;
+    border-radius: 50%;
+    background: transparent;
+    left: 22px;
+    top: 22px;
+}
+
+.icon-cost::after {
+    width: 20px;
+    height: 2px;
+    left: 31px;
+    top: 40px;
+}
+
+/* 维护 */
+.icon-maintenance::before {
+    width: 34px;
+    height: 2px;
+    transform: rotate(-45deg);
+    left: 24px;
+    top: 40px;
+}
+
+.icon-maintenance::after {
+    width: 14px;
+    height: 14px;
+    border: 2px solid #F5B301;
+    border-radius: 50%;
+    background: transparent;
+    left: 44px;
+    top: 22px;
+}
+
+/* 冷链 */
+.icon-coldchain::before {
+    width: 38px;
+    height: 24px;
+    border: 2px solid #F5B301;
+    background: transparent;
+    left: 20px;
+    top: 27px;
+}
+
+.icon-coldchain::after {
+    width: 34px;
+    height: 2px;
+    left: 24px;
+    top: 56px;
+}
+
+/* 功率 */
+.icon-power::before {
+    width: 2px;
+    height: 42px;
+    transform: rotate(25deg);
+    left: 40px;
+    top: 20px;
+}
+
+.icon-power::after {
+    width: 24px;
+    height: 2px;
+    transform: rotate(-25deg);
+    left: 30px;
+    top: 41px;
+}
+
+/* 电池 */
+.icon-battery::before {
+    width: 40px;
+    height: 22px;
+    border: 2px solid #F5B301;
+    border-radius: 4px;
+    background: transparent;
+    left: 18px;
+    top: 29px;
+}
+
+.icon-battery::after {
+    width: 5px;
+    height: 12px;
+    left: 60px;
+    top: 35px;
+}
+
+/* 扩展 */
+.icon-scale::before {
+    width: 6px;
+    height: 28px;
+    left: 25px;
+    top: 32px;
+    box-shadow:
+        14px -10px 0 #F5B301,
+        28px -18px 0 #F5B301;
+}
+
+.icon-scale::after {
+    width: 40px;
+    height: 2px;
+    left: 21px;
+    top: 60px;
+}
+
+/* 插头 */
+.icon-plug::before {
+    width: 30px;
+    height: 24px;
+    border: 2px solid #F5B301;
+    border-radius: 0 0 10px 10px;
+    background: transparent;
+    left: 24px;
+    top: 30px;
+}
+
+.icon-plug::after {
+    width: 2px;
+    height: 18px;
+    left: 40px;
+    top: 54px;
+}
+
+/* 耐用 */
+.icon-durable::before {
+    width: 34px;
+    height: 40px;
+    border: 2px solid #F5B301;
+    border-radius: 18px 18px 8px 8px;
+    background: transparent;
+    left: 23px;
+    top: 20px;
+}
+
+.icon-durable::after {
+    width: 2px;
+    height: 26px;
+    left: 40px;
+    top: 28px;
+}
+
+/* 轻量 */
+.icon-lightweight::before {
+    width: 38px;
+    height: 18px;
+    border: 2px solid #F5B301;
+    border-radius: 50%;
+    background: transparent;
+    transform: rotate(-28deg);
+    left: 22px;
+    top: 30px;
+}
+
+.icon-lightweight::after {
+    width: 30px;
+    height: 2px;
+    transform: rotate(-28deg);
+    left: 26px;
+    top: 44px;
+}
+
+.benefit-item h4 {
+    color: #111;
+    font-size: 20px;
+    font-weight: 600;
+    margin-bottom: 14px;
+    text-align: center;
+}
+
+.benefit-item p {
+    font-size: 15px;
+    color: #666;
+    line-height: 1.8;
+    text-align: center;
+}
+
+/* 应用案例 */
+.app-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+}
+
+.app-card {
+    background: #fff;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+    transition: transform 0.3s;
+}
+
+.app-card:hover {
+    transform: translateY(-5px);
+}
+
+.app-img {
+    width: 100%;
+    height: 320px;
+    object-fit: cover;
+    object-position: center;
+}
+
+.app-card h3 {
+    font-size: 18px;
+    padding: 15px 20px 5px;
+}
+
+.app-card p {
+    font-size: 14px;
+    color: #666;
+    padding: 0 20px 15px;
+}
+/* 应用案例痛点列表 */
+.pain-list {
+    list-style: none;
+    padding: 0 20px 24px;
+}
+
+.pain-list li {
+    position: relative;
+    padding-left: 18px;
+    margin-bottom: 12px;
+    font-size: 14px;
+    color: #555;
+    line-height: 1.7;
+}
+
+.pain-list li::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 10px;
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: #111;
+}
+/* 产品展示 */
+.product-showcase {
+    background: #fff;
+    padding: 80px 0;
+}
+
+.product-showcase h2 {
+    margin-bottom: 40px;
+}
+
+.showcase-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 28px;
+}
+
+.showcase-card {
+    background: #fff;
+    border-radius: 18px;
+    overflow: hidden;
+    box-shadow: 0 8px 28px rgba(0,0,0,0.06);
+}
+
+.showcase-img {
+    width: 100%;
+    height: 520px;
+    object-fit: contain;
+    background: #fff;
+    display: block;
+}
+
+.showcase-content {
+    display: none;
+}
+/* 数据实力 */
+
+.stats-section {
+    background: #f5f5f5;
+    padding: 24px 0 10px;
+}
+
+.stats-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 16px;
+}
+
+.stat-card {
+    background: #fff;
+    border-radius: 18px;
+    padding: 22px 22px 20px;
+    border: 1px solid #ececec;
+    transition: all 0.3s ease;
+}
+
+.stat-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 28px rgba(0,0,0,0.06);
+}
+
+.stat-top {
+    font-size: 13px;
+    color: #999;
+    margin-bottom: 18px;
+    font-weight: 600;
+}
+
+.stat-card h3 {
+    font-size: 44px;
+    line-height: 1;
+    color: #14853B;
+    margin-bottom: 14px;
+    font-weight: 700;
+    letter-spacing: -1px;
+}
+
+.stat-card p {
+    font-size: 14px;
+    line-height: 1.6;
+    color: #666;
+}
+
+
+
+
+
+
+/* 优质材料 */
+.materials {
+    background: #f9f9f9;
+}
+
+.material-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 38px;
+    align-items: stretch;
+}
+
+.material-card {
+    background: #fff;
+    padding: 20px;
+    border-radius: 18px;
+    box-shadow: 0 8px 28px rgba(0,0,0,0.05);
+    transition: all 0.3s ease;
+    overflow: hidden;
+}
+
+.material-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 18px 40px rgba(0,0,0,0.08);
+}
+
+.material-card h3 {
+    font-size: 18px;
+    margin-bottom: 15px;
+    color: #212121;
+}
+
+.material-card ul {
+    list-style: none;
+    margin-bottom: 20px;
+}
+
+.material-card ul li {
+    margin-bottom: 8px;
+    font-size: 14px;
+    color: #666;
+}
+
+.material-img {
+    width: 100%;
+    height: 240px;
+    object-fit: cover;
+    border-radius: 14px;
+    margin-top: 18px;
+}
+
+/* 安装简便 */
+.installation-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+    align-items: center;
+}
+
+.install-list {
+    list-style: none;
+    margin-top: 20px;
+}
+
+.install-list li {
+    margin-bottom: 12px;
+    color: #333;
+    background: #f0f0f0;
+    padding: 10px 15px;
+    border-radius: 20px;
+}
+
+.install-video {
+    width: 100%;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+/* 联系我们 */
+.contact {
+    background: #f9f9f9;
+}
+
+.contact h2 {
+    text-align: center;
+}
+
+.contact-desc {
+    text-align: center;
+    color: #666;
+    margin-bottom: 40px;
+}
+
+.contact-form {
+    max-width: 800px;
+    margin: 0 auto;
+    background: #fff;
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+}
+
+.form-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+    margin-bottom: 20px;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 500;
+    color: #333;
+    font-size: 14px;
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 14px;
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+    outline: none;
+    border-color: #2E7D32;
+}
+
+.btn-submit {
+    width: 100%;
+    background: #2E7D32;
+    color: #fff;
+    padding: 15px;
+    border: none;
+    border-radius: 4px;
+    font-size: 16px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.btn-submit:hover {
+    background: #1B5E20;
+}
+
+/* 页脚 */
+.footer {
+    background: #212121;
+    color: #fff;
+    text-align: center;
+    padding: 20px 0;
+}
+/* 移动端横向滑动提示箭头 */
+.scroll-hint {
+    display: none;
+}
+/* 响应式设计 */
+@media (max-width: 768px) {
+    .hero-content,
+    .installation-content,
+    .form-row {
+        grid-template-columns: 1fr;
+    }
+
+    .app-grid {
+        grid-template-columns: 1fr;
+    }
+    .nav-menu {
+        display: none;
+    }
+	.navbar {
+	    padding: 12px 0;
+	}
+	
+	.navbar .container {
+	    display: flex;
+	    justify-content: space-between;
+	    align-items: center;
+	}
+.material-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+}
+
+.material-card {
+    max-width: 100%;
+}
+
+
+	
+	.logo img {
+	    height: 34px;
+	}
+	.section-logo {
+	    display: flex;
+	    justify-content: center;
+	    margin-bottom: 22px;
+	}
+	
+	.section-logo img {
+	    width: 60px;
+	    height: auto;
+	    opacity: 0.8;
+	    display: block;
+	}
+	.btn-contact {
+	    background: #2E7D32;
+	    color: #fff !important;
+	    padding: 10px 22px;
+	    border-radius: 5px;
+	    margin-left: 10px;
+	}
+    .hero h1 {
+        font-size: 28px;
+    }
+
+    h2 {
+        font-size: 24px;
+    }
+	.hero {
+	    padding: 70px 0;
+	    min-height: auto;
+	}
+	
+	.hero-content {
+	    grid-template-columns: 1fr;
+	}
+	
+	.hero-features {
+	    flex-direction: column;
+	}
+	
+	.feature-card {
+	    width: 100%;
+	    border-radius: 12px;
+	}
+	.hero-content {
+	    grid-template-columns: 1fr;
+	}
+	
+	.hero-image {
+	    order: 1;
+	    margin-bottom: 25px;
+	}
+	
+	.hero-text {
+	    order: 2;
+	}
+	/* Benefit 移动端横向滑动 */
+	
+	.benefit-group {
+	    margin-bottom: 48px;
+	}
+	
+	.benefit-group h3 {
+	    font-size: 24px;
+	    margin-bottom: 18px;
+	}
+
+
+    .benefit-item {
+        max-width: 100%;
+    }
+	.series {
+	    padding: 60px 0;
+	}
+	
+	.series-block {
+	    margin-bottom: 60px;
+	}
+	
+	.series-text h3 {
+	    font-size: 28px;
+	}
+	
+	/* Series 图片移动端横滑 */
+	.series-grid {
+	    display: flex;
+	    overflow-x: auto;
+	    gap: 16px;
+	    scroll-snap-type: x mandatory;
+	    -webkit-overflow-scrolling: touch;
+	    padding-bottom: 12px;
+	}
+	
+	.series-grid::-webkit-scrollbar {
+	    display: none;
+	}
+	
+	.series-grid img {
+	    flex: 0 0 82%;
+	    width: 82%;
+	    height: 260px;
+	    object-fit: cover;
+	    border-radius: 18px;
+	    scroll-snap-align: start;
+	}
+	.scroll-hint {
+        display: flex;
+        justify-content: center;
+        gap: 18px;
+        margin-top: 12px;
+        color: #111;
+        font-size: 26px;
+        font-weight: 300;
+        letter-spacing: 4px;
+        opacity: 0.55;
+    }
+	.product-showcase {
+	    padding: 60px 0;
+	}
+	
+	.showcase-grid {
+	    grid-template-columns: repeat(2, 1fr);
+	    gap: 12px;
+	}
+	
+	.showcase-img {
+	    height: 220px;
+	    object-fit: contain;
+	}
+	.btn-contact {
+	        position: fixed;
+	        top: 14px;
+	        right: 14px;
+	
+	        z-index: 9999;
+	
+	        padding: 10px 16px;
+	
+	        font-size: 13px;
+	        font-weight: 600;
+	
+	        border-radius: 8px;
+	
+	        box-shadow: 0 8px 24px rgba(0,0,0,0.18);
+	    }
+ .mobile-top-inquiry {
+        display: inline-block;
+        position: fixed;
+        top: 14px;
+        right: 14px;
+        z-index: 9999;
+        background: #2E7D32;
+        color: #fff;
+        padding: 10px 16px;
+        border-radius: 8px;
+        text-decoration: none;
+        font-size: 13px;
+        font-weight: 600;
+        box-shadow: 0 8px 24px rgba(0,0,0,0.18);
+    }
+	.benefit-grid {
+	    grid-template-columns: 1fr;
+	    gap: 20px;
+	}
+	
+	.benefit-item {
+	    max-width: 100%;
+	}
+	.stats-grid { grid-template-columns: repeat(2, 1fr); gap: 12px; } 
+	.stat-card { padding: 18px 16px; } .stat-card h3 { font-size: 30px; } 
+	.stat-card p { font-size: 12px; line-height: 1.5; }
+	 .container {
+	        padding: 0 20px;
+	    }
+}
