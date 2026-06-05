@@ -388,7 +388,7 @@ body {
 
 /* 通用区块样式 */
 section {
-    padding: 60px 0;
+    padding: 38px 0;
 }
 
 .section-subtitle {
@@ -401,7 +401,7 @@ section {
 
 h2 {
     font-size: 32px;
-    margin-bottom: 30px;
+    margin-bottom: 18px;
     color: #212121;
 }
 
@@ -412,11 +412,38 @@ h2 {
     max-width: 800px;
 }
 
+/* Lensun Product */
+.lensun-product {
+    background: #fff;
+    padding: 80px 0;
+}
 
+.lensun-product .section-subtitle {
+    text-align: center;
+}
+
+.lensun-product h2 {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.lensun-product-image {
+    width: 100%;
+    border-radius: 22px;
+    overflow: hidden;
+    box-shadow: 0 18px 45px rgba(0,0,0,0.08);
+}
+
+.lensun-product-image img {
+    width: 100%;
+    height: 620px;
+    object-fit: cover;
+    display: block;
+}
 /*带来的好处*/
 .benefits {
     background: #f2f2f2;
-    padding: 80px 0;
+    padding: 48px 0;
 }
 
 .benefits h2 {
@@ -940,7 +967,7 @@ h2 {
         font-size: 24px;
     }
 	.hero {
-	    padding: 70px 0;
+	    padding: 56px 0;
 	    min-height: auto;
 	}
 	
@@ -1096,7 +1123,7 @@ h2 {
         opacity: 0.55;
     }
 	.product-showcase {
-	    padding: 60px 0;
+	    padding: 48px 0;
 	}
 	
 	.showcase-grid {
@@ -1161,4 +1188,20 @@ h2 {
 		        font-size: 34px;
 		        line-height: 1.2;
 		    }
+			.lensun-product {
+        padding: 55px 0;
+    }
+
+    .lensun-product h2 {
+        font-size: 26px;
+        margin-bottom: 24px;
+    }
+
+    .lensun-product-image {
+        border-radius: 16px;
+    }
+
+    .lensun-product-image img {
+        height: 260px;
+    }
 }
