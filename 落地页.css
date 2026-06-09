@@ -291,8 +291,8 @@ body {
 .app-slider-track .app-img {
     flex: 0 0 100%;
     width: 100%;
-    height: 320px;
-    object-fit: cover;
+    height: 100%;
+    object-fit: contain;
     object-position: center;
 }
 
@@ -1391,5 +1391,20 @@ h2 {
 	       .mobile-product-menu.active .mobile-product-list {
 	           display: block;
 	       }
+		@media (max-width:768px){
 		
+		    .app-slider{
+		        height:auto;
+		    }
+		
+		    .app-slider-track{
+		        height:auto;
+		    }
+		
+		    .app-slider-track .app-img{
+		        height:auto;
+		        object-fit:contain;
+		    }
+		
+		}
 }
