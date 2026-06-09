@@ -64,3 +64,42 @@ document.querySelectorAll('.app-slider').forEach(slider => {
         });
     });
 });
+const mobileProductMenu = document.querySelector('.mobile-product-menu');
+const mobileProductBtn = document.querySelector('.mobile-product-btn');
+
+if (mobileProductMenu && mobileProductBtn) {
+    mobileProductBtn.addEventListener('click', function () {
+        mobileProductMenu.classList.toggle('active');
+    });
+}
+// 图片点击放大
+const lightbox = document.createElement('div');
+lightbox.className = 'image-lightbox';
+lightbox.innerHTML = `
+    <span class="image-lightbox-close">×</span>
+    <img src="" alt="">
+`;
+
+document.body.appendChild(lightbox);
+
+const lightboxImg = lightbox.querySelector('img');
+const closeBtn = lightbox.querySelector('.image-lightbox-close');
+
+document.querySelectorAll('.app-img').forEach(img => {
+    img.addEventListener('click', function () {
+        lightboxImg.src = this.src;
+        lightbox.classList.add('active');
+    });
+});
+
+closeBtn.addEventListener('click', function () {
+    lightbox.classList.remove('active');
+    lightboxImg.src = '';
+});
+
+lightbox.addEventListener('click', function (e) {
+    if (e.target === lightbox) {
+        lightbox.classList.remove('active');
+        lightboxImg.src = '';
+    }
+});
