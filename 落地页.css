@@ -644,6 +644,12 @@ h2 {
     border-radius: 50%;
     background: #111;
 }
+.app-desc{
+    padding: 0 20px 12px;
+    font-size: 14px;
+    color: #666;
+    line-height: 1.7;
+}
 /* 产品展示 */
 .product-showcase {
     background: #fff;
@@ -1391,20 +1397,98 @@ h2 {
 	       .mobile-product-menu.active .mobile-product-list {
 	           display: block;
 	       }
+		
+}
+		
+		/* PC隐藏品牌区域 */
+		.mobile-brand-area{
+		    display:none !important;
+		}
+		
 		@media (max-width:768px){
 		
+		    /* 隐藏原轮播 */
 		    .app-slider{
-		        height:auto;
+		        display:none !important;
 		    }
 		
-		    .app-slider-track{
-		        height:auto;
+		    /* 显示品牌区域 */
+		    .mobile-brand-area{
+		        display:block !important;
+		        max-height:60vh;
+		        overflow-y:auto;
+		    
+		        position:relative;
+		    
+		        background:#fff;
+		    
+		        padding:14px;
+		        border-top:1px solid #eee;
 		    }
 		
-		    .app-slider-track .app-img{
+		    /* 品牌标签固定 */
+		    .brand-tabs{
+		        position:sticky;
+		        top:0;
+		        z-index:9999;
+		    
+		        display:flex;
+		        flex-wrap:wrap;
+		        gap:8px;
+		    
+		        padding:14px 0 14px;
+		    
+		        background:#fff;
+		        box-shadow: 0 -20px 0 #fff, 0 12px 0 #fff;
+		    
+		        border-bottom:1px solid #eee;
+		    
+		        margin-bottom:18px;
+		    }
+		
+		    /* 品牌胶囊 */
+		    .brand-tabs a{
+		        display:inline-flex;
+		        align-items:center;
+		        justify-content:center;
+		
+		        padding:8px 14px;
+		
+		        background:#fff;
+		
+		        border:1px solid #dcdcdc;
+		
+		        border-radius:999px;
+		
+		        color:#111;
+		
+		        text-decoration:none;
+		
+		        font-size:13px;
+		        font-weight:500;
+		
+		        white-space:nowrap;
+		    }
+		
+		    .brand-image-group{
+		        margin-top:16px;
+				margin-bottom:40px;
+		    }
+		
+		    .brand-image-group h4{
+		        font-size:16px;
+		        margin-bottom:12px;
+		        color:#111;
+		    }
+		
+		    .brand-image-group .app-img{
+		        width:100%;
 		        height:auto;
+		        display:block;
 		        object-fit:contain;
+		        border-radius:12px;
+		        margin-bottom:12px;
+		        background:#f5f5f5;
 		    }
-		
 		}
-}
+		
