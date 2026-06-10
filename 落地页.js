@@ -1,17 +1,31 @@
-// 平滑滚动到锚点
-document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-    anchor.addEventListener('click', function (e) {
+
+// 平滑滚动到锚点，排除品牌标签
+// 品牌标签：只在当前 mobile-brand-area 内部滚动
+document.querySelectorAll('.brand-tabs a').forEach(link => {
+    link.addEventListener('click', function (e) {
         e.preventDefault();
-        const target = document.querySelector(this.getAttribute('href'));
-        if (target) {
-            target.scrollIntoView({
-                behavior: 'smooth',
-                block: 'start'
-            });
-        }
+        e.stopPropagation();
+
+        const targetId = this.getAttribute('href');
+        const scrollBox = this.closest('.mobile-brand-area');
+
+        if (!targetId || !scrollBox) return;
+
+        const target = scrollBox.querySelector(targetId);
+
+        if (!target) return;
+
+        const tabs = scrollBox.querySelector('.brand-tabs');
+        const offset = tabs ? tabs.offsetHeight + 16 : 0;
+
+        const top = target.offsetTop - offset;
+
+        scrollBox.scrollTo({
+            top: top,
+            behavior: 'smooth'
+        });
     });
 });
-
 // 表单提交处理
 document.querySelector('.contact-form').addEventListener('submit', function(e) {
     e.preventDefault();
