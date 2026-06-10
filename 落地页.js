@@ -7,18 +7,16 @@ document.querySelectorAll('.brand-tabs a').forEach(link => {
         e.stopPropagation();
 
         const targetId = this.getAttribute('href');
-        const scrollBox = this.closest('.mobile-brand-area');
+        const brandArea = this.closest('.mobile-brand-area');
 
-        if (!targetId || !scrollBox) return;
+        if (!targetId || !brandArea) return;
 
-        const target = scrollBox.querySelector(targetId);
+        const scrollBox = brandArea.querySelector('.brand-scroll-box');
+        const target = brandArea.querySelector(targetId);
 
-        if (!target) return;
+        if (!scrollBox || !target) return;
 
-        const tabs = scrollBox.querySelector('.brand-tabs');
-        const offset = tabs ? tabs.offsetHeight + 16 : 0;
-
-        const top = target.offsetTop - offset;
+        const top = target.offsetTop - scrollBox.offsetTop;
 
         scrollBox.scrollTo({
             top: top,
@@ -78,14 +76,7 @@ document.querySelectorAll('.app-slider').forEach(slider => {
         });
     });
 });
-const mobileProductMenu = document.querySelector('.mobile-product-menu');
-const mobileProductBtn = document.querySelector('.mobile-product-btn');
 
-if (mobileProductMenu && mobileProductBtn) {
-    mobileProductBtn.addEventListener('click', function () {
-        mobileProductMenu.classList.toggle('active');
-    });
-}
 // 图片点击放大
 const lightbox = document.createElement('div');
 lightbox.className = 'image-lightbox';
@@ -117,3 +108,13 @@ lightbox.addEventListener('click', function (e) {
         lightboxImg.src = '';
     }
 });
+const backToTopBtn = document.querySelector('.back-to-top');
+
+if (backToTopBtn) {
+    backToTopBtn.addEventListener('click', function () {
+        window.scrollTo({
+            top: 0,
+            behavior: 'smooth'
+        });
+    });
+}
