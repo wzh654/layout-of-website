@@ -1,6 +1,7 @@
 
 // 平滑滚动到锚点，排除品牌标签
 // 品牌标签：只在当前 mobile-brand-area 内部滚动
+// 移动端品牌标签：跳转到当前应用卡片内对应品牌位置
 document.querySelectorAll('.brand-tabs a').forEach(link => {
     link.addEventListener('click', function (e) {
         e.preventDefault();
@@ -11,14 +12,15 @@ document.querySelectorAll('.brand-tabs a').forEach(link => {
 
         if (!targetId || !brandArea) return;
 
-        const scrollBox = brandArea.querySelector('.brand-scroll-box');
         const target = brandArea.querySelector(targetId);
+        if (!target) return;
 
-        if (!scrollBox || !target) return;
+        const navbar = document.querySelector('.navbar');
+        const offset = navbar ? navbar.offsetHeight + 16 : 80;
 
-        const top = target.offsetTop - scrollBox.offsetTop;
+        const top = target.getBoundingClientRect().top + window.pageYOffset - offset;
 
-        scrollBox.scrollTo({
+        window.scrollTo({
             top: top,
             behavior: 'smooth'
         });
@@ -76,7 +78,14 @@ document.querySelectorAll('.app-slider').forEach(slider => {
         });
     });
 });
+const mobileProductMenu = document.querySelector('.mobile-product-menu');
+const mobileProductBtn = document.querySelector('.mobile-product-btn');
 
+if (mobileProductMenu && mobileProductBtn) {
+    mobileProductBtn.addEventListener('click', function () {
+        mobileProductMenu.classList.toggle('active');
+    });
+}
 // 图片点击放大
 const lightbox = document.createElement('div');
 lightbox.className = 'image-lightbox';
@@ -108,6 +117,7 @@ lightbox.addEventListener('click', function (e) {
         lightboxImg.src = '';
     }
 });
+// 返回顶部按钮
 const backToTopBtn = document.querySelector('.back-to-top');
 
 if (backToTopBtn) {
