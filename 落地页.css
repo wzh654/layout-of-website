@@ -174,7 +174,115 @@ body {
     flex-wrap: wrap;
 }
 
+/* =========================
+   Mobile Brand Product Card
+   ========================= */
 
+.vehicle-product{
+    background:#fff;
+
+    border:1px solid #ececec;
+    border-radius:14px;
+
+    overflow:hidden;
+
+    margin-bottom:18px;
+
+    box-shadow:0 2px 8px rgba(0,0,0,.04);
+}
+
+.vehicle-product .app-img{
+    width:100%;
+    display:block;
+
+    margin:0;
+
+    object-fit:contain;
+
+    background:#f5f5f5;
+}
+
+.vehicle-info{
+    padding:14px 16px 18px;
+}
+
+.vehicle-series{
+    font-size:18px;
+    font-weight:700;
+
+    color:#111;
+
+    margin-bottom:8px;
+}
+
+.vehicle-desc{
+     margin:0;
+    
+        font-size:16px;
+    
+        font-weight:700;
+    
+        color:#111;
+    
+        line-height:1.6;
+}
+
+/* 品牌标题 */
+
+.brand-image-group h4{
+    font-size:22px;
+    font-weight:700;
+
+    color:#111;
+
+    margin-bottom:16px;
+}
+
+/* 品牌区块间距 */
+
+.brand-image-group{
+    margin-bottom:48px;
+}
+
+/* 品牌标签 */
+
+.brand-tabs{
+    display:flex;
+    flex-wrap:wrap;
+
+    gap:8px;
+
+    margin-bottom:20px;
+}
+
+.brand-tabs a{
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    padding:8px 14px;
+
+    border-radius:999px;
+
+    border:1px solid #ddd;
+
+    background:#fff;
+
+    color:#111;
+
+    text-decoration:none;
+
+    font-size:13px;
+    font-weight:600;
+}
+
+/* 去掉内部滚动 */
+
+.brand-scroll-box{
+    max-height:none;
+    overflow:visible;
+    padding-right:0;
+}
 
 
 
@@ -197,30 +305,94 @@ body {
                 grid-template-columns:1fr 1fr;
                 gap:10px;
         }
-    .hero-category-grid a:first-child{
-         grid-column:1 / span 2;
-            height:52px;
-            font-size:14px;
-            font-weight:700;
-    }
-        .hero-category-grid a{
-            display:flex;
-            align-items:center;
-            justify-content:center;
-    
-            height:48px;
-    
-            border-radius:999px;
-    
-            background:rgba(255,255,255,.08);
-            border:1px solid rgba(255,255,255,.25);
-    
-            color:#fff;
-            text-decoration:none;
-    
-            font-size:13px;
-            font-weight:600;
-        }
+		.hero-category-nav{
+		    display:block;
+		    margin-top:24px;
+		}
+		
+		.hero-category-title{
+		    color:#fff;
+		    font-size:14px;
+		    font-weight:700;
+		    margin-bottom:12px;
+		}
+		
+		.hero-category-grid{
+		    display:grid;
+		    grid-template-columns:1fr 1fr;
+		    gap:12px;
+		}
+		
+		.hero-category-grid a{
+		
+		    display:flex;
+		    align-items:center;
+		    justify-content:center;
+		    gap:8px;
+		
+		    height:52px;
+		
+		    border-radius:18px;
+		
+		    background:rgba(255,255,255,.12);
+		
+		    backdrop-filter:blur(12px);
+		
+		    border:2px solid rgba(255,255,255,.65);
+		
+		    color:#fff;
+		
+		    text-decoration:none;
+		
+		    font-size:14px;
+		    font-weight:700;
+		
+		    box-shadow:
+		        0 8px 24px rgba(0,0,0,.15);
+		
+		    transition:all .25s ease;
+		}
+		.hero-category-grid a:active{
+		    transform:scale(.97);
+		}
+		
+		.hero-category-grid a:hover{
+		    background:rgba(255,255,255,.18);
+		}
+		
+		.hero-category-grid a span{
+		    opacity:.8;
+		}
+		.hero-category-grid a:first-child{
+		    grid-column:1 / span 2;
+		
+		     background:rgba(255,255,255,.12);
+		    
+		        border:2px solid #ffffff;
+		    
+		        color:#fff;
+		    
+		        box-shadow:
+		            0 0 0 1px rgba(255,255,255,.25),
+		            0 10px 28px rgba(0,0,0,.22);
+		}
+		
+		.hero-category-grid a span{
+		    font-size:16px;
+		    line-height:1;
+		    opacity:.8;
+		    transition:transform .25s ease;
+		}
+		
+		.hero-category-grid a:active{
+		    transform:scale(.96);
+		    background:#2E7D32;
+		    border-color:#2E7D32;
+		}
+		
+		.hero-category-grid a:hover span{
+		    transform:translateX(4px);
+		}
 		 .pain-list{
 		        display:none;
 		    }
@@ -1449,10 +1621,9 @@ h2 {
 		       white-space:nowrap;
 		   }
 		   .brand-scroll-box{
-		       max-height:520px;
-		       overflow-y:auto;
-		       padding-right:4px;
-		       -webkit-overflow-scrolling:touch;
+		        max-height:none;
+		            overflow:visible;
+		            padding-right:0;
 		   }
 		
 		   .brand-image-group{
@@ -1503,98 +1674,78 @@ h2 {
 			    cursor:pointer;
 			}
 		}
-		@media (min-width: 769px) {
-		
-		    .app-grid {
-		        display: flex;
-		        flex-direction: column;
-		        gap: 40px;
-		    }
-		
-		    .app-card {
-		        display: grid;
-		        grid-template-columns: 36% 64%;
-		        gap: 36px;
-		        padding: 32px;
-		        border-radius: 22px;
-		        align-items: start;
-		    }
-		
-		    .app-card .app-slider {
-		        grid-column: 2;
-		        grid-row: 1 / span 2;
-		        height: 560px;
-		        overflow-y: auto;
-		        overflow-x: hidden;
-		        border-radius: 18px;
-		    }
-		
-		    .app-card .app-slider-track {
-		        display: block;
-		        height: auto;
-		        transform: none !important;
-		        transition: none !important;
-		    }
-		
-		    .app-card .app-slider-track .app-img {
-		        width: 100%;
-		        height: auto;
-		        min-height: 360px;
-		        object-fit: contain;
-		        display: block;
-		        margin-bottom: 18px;
-		        background: #f5f5f5;
-		    }
-		
-		    .app-card h3 {
-		        grid-column: 1;
-		        grid-row: 1;
-		        padding: 0;
-		        font-size: 26px;
-		        margin-bottom: 20px;
-		    }
-		
-		    .app-card .pain-list {
-		        grid-column: 1;
-		        grid-row: 2;
-		        padding: 0;
-		        display: block;
-		    }
-		
-		    .app-slide-btn,
-		    .app-slide-dots {
-		        display: none !important;
-		    }
-		
-		    .app-card:hover {
-		        transform: none;
-		    }
-		}
-		@media (min-width:769px){
-		
-		    .app-card{
-		        grid-template-columns:42% 58%;
-		    }
-		
-		    .app-card h3{
-		        padding:0;
-		        margin-top:60px;
-		
-		        font-size:42px;
-		        font-weight:700;
-		        line-height:1.2;
-		    }
-		
-		    .app-card .pain-list{
-		        padding:0;
-		        margin-top:40px;
-		    }
-		
-		    .app-card .pain-list li{
-		        font-size:22px;
-		        line-height:1.8;
-		        margin-bottom:28px;
-		        font-weight:500;
-		    }
-		
-		}
+@media (min-width:769px){
+
+    .app-grid{
+        display:flex;
+        flex-direction:column;
+        gap:70px;
+    }
+
+    .app-card{
+        background:transparent;
+        box-shadow:none;
+        border-radius:0;
+        overflow:visible;
+        padding:0;
+    }
+
+    .app-card:hover{
+        transform:none;
+    }
+
+    .app-card h3{
+        font-size:34px;
+        font-weight:800;
+        color:#111;
+        padding:0;
+        margin-bottom:14px;
+    }
+
+    .app-card .pain-list{
+        display:none;
+    }
+
+    .app-slider{
+        display:block;
+        height:auto;
+        overflow:visible;
+        background:transparent;
+        border-radius:0;
+    }
+
+    .app-slider-track{
+        display:grid;
+        grid-template-columns:repeat(4, 1fr);
+        gap:24px;
+        height:auto;
+        transform:none !important;
+        transition:none !important;
+    }
+
+    .app-slider-track .app-img{
+         width:100%;
+            height:240px;
+        
+            object-fit:cover;
+            object-position:center center;
+        
+            border-radius:16px;
+        
+            box-shadow:0 8px 24px rgba(0,0,0,.08);
+        
+            margin:0;
+    }
+
+    .app-slide-btn,
+    .app-slide-dots{
+        display:none !important;
+    }
+}
+.pc-product-info p{
+    font-size:15px;
+    font-weight:700;
+    color:#111;
+    margin-top:4px;
+    line-height:1.5;
+}
