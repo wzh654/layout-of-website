@@ -1749,3 +1749,71 @@ h2 {
     margin-top:4px;
     line-height:1.5;
 }
+@media (max-width:768px){
+
+    .mobile-brand-area{
+        position: relative;
+    }
+
+    .brand-tabs{
+        position: sticky;
+        top: 66px;
+        z-index: 60;
+
+        background: #fff;
+        padding: 12px 0 14px;
+
+        border-bottom: 1px solid #eee;
+        box-shadow: 0 6px 14px rgba(0,0,0,0.04);
+    }
+
+    .brand-tabs a{
+        background: #fff;
+    }
+
+    .brand-image-group{
+        scroll-margin-top: 150px;
+    }
+
+}
+/* 移动端优化：品牌居中 + 功率加粗 */
+@media (max-width: 768px) {
+
+    /* 整体信息居中 */
+    .vehicle-info {
+        text-align: center;
+    }
+
+    /* 品牌/车型名字居中 */
+    .vehicle-series {
+        display: block;
+        text-align: center;
+        font-weight: 600;
+        margin-bottom: 4px;
+    }
+
+    /* 功率/方案文字加粗 */
+    .vehicle-desc {
+        text-align: center;
+        font-weight: 700;
+        color: #111; /* 可选：更清晰一点 */
+    }
+
+}
+@media (max-width: 768px) {
+
+    .vehicle-desc {
+        color: #000 !important;   /* ⭐纯黑 */
+        font-weight: 700 !important;
+        text-align: center !important;
+    }
+
+    .vehicle-series {
+        color: #000 !important;   /* 如果品牌也要黑 */
+        text-align: center !important;
+    }
+
+    .vehicle-info {
+        text-align: center !important;
+    }
+}
