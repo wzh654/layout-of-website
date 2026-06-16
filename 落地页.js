@@ -2,18 +2,15 @@
 // 平滑滚动到锚点，排除品牌标签
 // 品牌标签：只在当前 mobile-brand-area 内部滚动
 // 移动端品牌标签：跳转到当前应用卡片内对应品牌位置
-document.querySelectorAll('.brand-tabs a').forEach(link => {
-    link.addEventListener('click', function (e) {
-        e.preventDefault();
-        e.stopPropagation();
+document.querySelectorAll('a[href^="#"]').forEach(link => {
+    link.addEventListener('click', function(e) {
 
         const targetId = this.getAttribute('href');
-        const brandArea = this.closest('.mobile-brand-area');
+        const target = document.querySelector(targetId);
 
-        if (!targetId || !brandArea) return;
-
-        const target = brandArea.querySelector(targetId);
         if (!target) return;
+
+        e.preventDefault();
 
         const navbar = document.querySelector('.navbar');
         const offset = navbar ? navbar.offsetHeight + 16 : 80;
@@ -128,3 +125,15 @@ if (backToTopBtn) {
         });
     });
 }
+
+document.querySelectorAll('.brand-tabs a').forEach(item => {
+    item.addEventListener('click', function(e){
+
+        // 移除所有 active
+        document.querySelectorAll('.brand-tabs a')
+            .forEach(el => el.classList.remove('active'));
+
+        // 当前加 active
+        this.classList.add('active');
+    });
+});
